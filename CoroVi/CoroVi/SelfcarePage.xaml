@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoroVi.SelfcarePage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="pink">
+            <Label Text="SELF-CARE PAGE: Coming Soon!" 
+                           VerticalOptions="EndAndExpand" 
+                           HorizontalOptions="CenterAndExpand"/>
+            <Label Padding="25,25,25,25" 
+                   Text="This is where the SQLite will be used. The users will be ask to do a self assessment if they have Covid or not. The questions I will use are from this link: https://covid-19.ontario.ca/self-assessment/"
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

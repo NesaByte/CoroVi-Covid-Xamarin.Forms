@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoroVi.AccountPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="pink">
+            <Label Text="ACCOUNT PAGE: Coming Soon!" 
+                           VerticalOptions="EndAndExpand" 
+                           HorizontalOptions="CenterAndExpand"/>
+            <Label Padding="25,25,25,25" 
+                   Text="This is where the users are able to see their status, if they have Covid or not. And this will also display some tips and ways to self-isolate or Covid prevention"
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
