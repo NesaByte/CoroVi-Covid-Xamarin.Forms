@@ -4,9 +4,7 @@
              x:Class="CoroVi.SelfcarePage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="pink">
-            <Label Text="SELF-CARE PAGE: Coming Soon!" 
-                           VerticalOptions="EndAndExpand" 
-                           HorizontalOptions="CenterAndExpand"/>
+            <Label Text="SELF-CARE PAGE: Coming Soon!" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"/>
             <Label Padding="25,25,25,25" 
                    Text="This is where the SQLite will be used. The users will be ask to do a self assessment if they have Covid or not. The questions I will use are from this link: https://covid-19.ontario.ca/self-assessment/"
                    VerticalOptions="StartAndExpand" 

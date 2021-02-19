@@ -67,6 +67,7 @@ C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\as
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\assets\mscorlib.dll
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\assets\mscorlib.pdb
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\assets\netstandard.dll
+C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.dll
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.pdb
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\90\android\assets\System.Core.dll

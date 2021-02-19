@@ -8,6 +8,41 @@
             <Label Text="HOMEPAGE!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="TotalConfirmed" Text="TotalConfirmed"/>
+            <Label x:Name="TotalDeaths" Text="TotalDeaths"/>
+            <Label x:Name="TotalRecovered" Text="TotalRecovered"/>
+
+            <StackLayout Padding="40,10,40,10">
+
+                <TableView >
+                    <TableView.Root >
+                        <TableSection >
+                            <EntryCell x:Name="countryName" LabelColor="Black" Label="Country"  Placeholder="Enter Country Name"></EntryCell>
+                        </TableSection>
+                    </TableView.Root>
+                </TableView>
+            </StackLayout>
+
+            <Button x:Name="Btn_country" Text="Enter"  Clicked="Btn_country_clicked"/>
+            <Label x:Name="Lbl_country" Text="cname"/>
+
+            <ListView x:Name="summaryList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="0,13" >
+                                <StackLayout>
+                                    <Label Text="{Binding Confirmed}" />
+                                    <Label Text="{Binding Deaths}"/>
+                                    <Label Text="{Binding Recovered}"/>
+                                </StackLayout>
+                                <Label Text="{Binding Country}" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
