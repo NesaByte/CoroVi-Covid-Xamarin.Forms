@@ -43,6 +43,7 @@ Xamarin.AndroidX.VersionedParcelable
 Xamarin.AndroidX.ViewPager
 Xamarin.AndroidX.ViewPager2
 Xamarin.Essentials
+Xamarin.Forms.PancakeView
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Google.Android.Material

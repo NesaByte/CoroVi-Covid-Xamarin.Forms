@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Net.Http;
-
+using System.Net;
 
 namespace CoroVi
 {
@@ -50,7 +50,7 @@ namespace CoroVi
             Console.WriteLine(cs.TotalRecovered);
 
 
-            // Displays the Global Data
+            // XAML Sets and Displays the Global Data
             TotalConfirmed.Text = cs.TotalConfirmed.ToString();
             TotalDeaths.Text = cs.TotalDeaths.ToString();
             TotalRecovered.Text = cs.TotalRecovered.ToString();
@@ -65,7 +65,10 @@ namespace CoroVi
 
         }
 
-
+        void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            ((Entry)sender).Text = string.Empty;
+        }
         /*public async void GetTotalCases()
         {
             // create new http client to handle the request
@@ -115,6 +118,32 @@ namespace CoroVi
             {
 
                 Lbl_country.Text = countryName.Text;
+                var url_country = "https://api.covid19api.com/country/";
+                var today_date = "&to=" + DateTime.Now.ToString("yyyy-MM-dd") + "T00:00:00Z";
+                var yesterday_date = "?from=" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "T00:00:00Z";
+
+                var url_find = url_country + countryName.Text + yesterday_date + today_date;
+                var res = await client.GetAsync(url_find);
+                if (res.StatusCode == HttpStatusCode.NotFound)
+                {
+                    
+                    await DisplayAlert("Error", "Please give me a correct country name", "OK");
+                    Lbl_country.Text = "";
+
+                }
+                else {
+                    var res_ = await client.GetStringAsync(url_find);
+
+                    await DisplayAlert("Good Link", res_, "OK");
+                    
+
+                    //TotalConfirmed.Text = cs.TotalConfirmed.ToString();
+                    //TotalDeaths.Text = cs.TotalDeaths.ToString();
+                    //TotalRecovered.Text = cs.TotalRecovered.ToString();
+                }
+
+                Console.WriteLine(url_find);
+
 
             }
         }

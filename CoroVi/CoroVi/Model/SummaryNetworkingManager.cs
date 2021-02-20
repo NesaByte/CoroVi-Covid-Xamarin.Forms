@@ -16,23 +16,23 @@ namespace CoroVi
     public class SummaryNetworkingManager
     {
 
-        public string todaydate = "&to=" + DateTime.Now.ToString("yyyy-MM-dd") + "T01:00:00Z";
-        public string yesterdaydate = "from=" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "T23:50:00Z";
+        public string todaydate = "&to=" + DateTime.Now.ToString("yyyy-MM-dd") + "T00:00:00Z";
+        public string yesterdaydate = "?from=" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "T00:00:00Z";
 
-        private string url = "https://api.covid19api.com/world/total";
+        private string url_total = "https://api.covid19api.com/world/total";
 
         // URL for country names
         //private string url_country_names = "https://gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json";
 
         //
         //private string url_dayone_country = "https://api.covid19api.com/dayone/country/south-africa";
-        private string url_dayone_country = "https://api.covid19api.com/country/canada?";//"https://api.covid19api.com/country/south-africa/status/confirmed/live?";
-
+        private string url_dayone_country = "https://api.covid19api.com/country/canada";
 
         //
-
         private string url_summary = "https://api.covid19api.com/summary";
 
+
+        private string url_country = "https://api.covid19api.com/country/";
 
 
         private HttpClient client = new HttpClient();
@@ -44,7 +44,7 @@ namespace CoroVi
         public async Task<CovidSummaryClass> GetSummaryCovid()
         {
 
-            var response = await client.GetStringAsync(url);
+            var response = await client.GetStringAsync(url_total);
             CovidSummaryClass cs = JsonConvert.DeserializeObject<CovidSummaryClass>(response);
             //Console.WriteLine(cs.TotalConfirmed);
 
@@ -54,6 +54,9 @@ namespace CoroVi
 
         public async Task<List<CountriesSummaryClass>> GetCountriesCovid()
         {
+            Console.WriteLine(yesterdaydate);
+            Console.WriteLine(todaydate);
+
             var final_url = url_dayone_country  + yesterdaydate + todaydate;
             var res = await client.GetAsync(final_url);
             if (res.StatusCode == HttpStatusCode.NotFound)
@@ -77,10 +80,24 @@ namespace CoroVi
             return null;
         }
 
+        public async Task<List<CountriesSummaryClass>> searchForCountries(string country)
+        {
+            var url_final = url_country + country + yesterdaydate + todaydate;
+            var response = await client.GetAsync(url_final);
+            if (response.StatusCode == HttpStatusCode.NotFound)
+                return new List<CountriesSummaryClass>();
+
+
+            var stringResponse = await response.Content.ReadAsStringAsync();
+            var dic = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(stringResponse);
+            var array = dic.ElementAt(0).Value.ElementAt(1).Value;
+            return JsonConvert.DeserializeObject<List<CountriesSummaryClass>>(array.ToString());
+        }
+
+
+
         //public void GetCountries()
         //{
-
-
         //    DataSet dataSet = JsonConvert.DeserializeObject<DataSet>(url_summary);
 
         //    DataTable dataTable = dataSet.Tables["Country"];

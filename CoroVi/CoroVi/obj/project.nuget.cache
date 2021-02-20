@@ -1,15 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "nuJbjX23DpeISsMD7zfkAnZSH/VmI+QtTQjySdPeDBrio8l2yZXTquqY0ZIvkuNnJ+6BGQlRpIqnohHgyAlmhQ==",
+  "dgSpecHash": "2c0xA9HvIGpAbMyeXE/WbEY6/LkOSY673qmshoPh9Q4xHql9dWTQny+IHn5o8Il5Ep6GJJOcBN+Xqtq8VniayA==",
   "success": true,
   "projectFilePath": "C:\\Users\\oyoni\\source\\repos\\CoroVi\\CoroVi\\CoroVi\\CoroVi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oyoni\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
   ],
   "logs": []
 }

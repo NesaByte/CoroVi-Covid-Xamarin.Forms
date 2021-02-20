@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "BYd60cPRZGGFCegPS0NsZFHQb96lOkVa6wPOJDpzURsF/k6qeY0ljDodw11heBJplb5JkY0Ot86dNyJfTBHtdg==",
+  "dgSpecHash": "tiHmeFpLuYMOK8OZ7NuiwVls6fCEa+snFV/ylC+Fb4MIVcgsYDpqBthYuZ/6Fj1ZqU/GZ/VrVXCVoBDBW0Ka3A==",
   "success": true,
   "projectFilePath": "C:\\Users\\oyoni\\source\\repos\\CoroVi\\CoroVi\\CoroVi.Android\\CoroVi.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oyoni\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.androidx.annotation\\1.1.0.8\\xamarin.androidx.annotation.1.1.0.8.nupkg.sha512",
@@ -52,6 +53,7 @@
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.8\\xamarin.androidx.viewpager2.1.0.0.8.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.google.android.material\\1.2.1.1\\xamarin.google.android.material.1.2.1.1.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
