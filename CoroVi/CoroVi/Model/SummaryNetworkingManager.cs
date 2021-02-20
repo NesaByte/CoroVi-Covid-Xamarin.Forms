@@ -61,8 +61,8 @@ namespace CoroVi
             
 
             try {
-                //var res = await client.GetAsync(final_url);
-                var res = client.GetAsync(final_url).GetAwaiter().GetResult();
+                HttpResponseMessage res = await client.GetAsync(final_url);
+                //var res = client.GetAsync(final_url).GetAwaiter().GetResult();
                 if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable)
                     return new List<CountriesSummaryClass>();
                 try {

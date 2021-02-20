@@ -8,7 +8,6 @@ namespace CoroVi
     {
         public int NewConfirmed { get; set; }
         public int TotalConfirmed { get; set; }
-
         public int NewDeaths { get; set; }
         public int TotalDeaths { get; set; }
 

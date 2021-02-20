@@ -18,7 +18,7 @@ namespace CoroVi
         public SummaryNetworkingManager summaryNetworkingManager = new SummaryNetworkingManager();
 
         //url for global values
-        private string url_worldTotal = "https://api.covid19api.com/world/total";
+        private string url_worldTotal = "https://corona.lmao.ninja/v3/covid-19/all";
 
         //url for list of country names
         private string url_dayone_country = "https://api.covid19api.com/country/canada";
@@ -34,25 +34,25 @@ namespace CoroVi
         protected async override void OnAppearing()
         {
             // Displays countries
-            summaryList.ItemsSource = null;
+            //summaryList.ItemsSource = null;
 
-            var list = await summaryNetworkingManager.GetCountriesCovid();
-            summary_list = new ObservableCollection<CountriesSummaryClass>(list);
+            //var list = await summaryNetworkingManager.GetCountriesCovid();
+            //summary_list = new ObservableCollection<CountriesSummaryClass>(list);
 
-            summaryList.ItemsSource = summary_list;
+            //summaryList.ItemsSource = summary_list;
 
             // Quick console logs
             var res_worldTotal = await client.GetStringAsync(url_worldTotal);
-            CovidSummaryClass cs = JsonConvert.DeserializeObject<CovidSummaryClass>(res_worldTotal);
+            CovidAllClass cs = JsonConvert.DeserializeObject<CovidAllClass>(res_worldTotal);
             
-            Console.WriteLine(cs.TotalConfirmed);
-            Console.WriteLine(cs.TotalDeaths);
-            Console.WriteLine(cs.TotalRecovered);
+            Console.WriteLine(cs.cases);
+            Console.WriteLine(cs.deaths);
+            Console.WriteLine(cs.recovered);
 
             // XAML Sets and Displays the Global Data
-            TotalConfirmed.Text = cs.TotalConfirmed.ToString();
-            TotalDeaths.Text = cs.TotalDeaths.ToString();
-            TotalRecovered.Text = cs.TotalRecovered.ToString();
+            TotalConfirmed.Text = cs.cases.ToString();
+            TotalDeaths.Text = cs.deaths.ToString();
+            TotalRecovered.Text = cs.recovered.ToString();
 
             //countries
 
@@ -77,13 +77,6 @@ namespace CoroVi
                 var country_url = url_dayone_country + summaryNetworkingManager.yesterdaydate + summaryNetworkingManager.todaydate;
                 Console.WriteLine(country_url);
 
-                //
-                
-                //var url_country = "https://api.covid19api.com/country/";
-                //var today_date = "&to=" + DateTime.Now.ToString("yyyy-MM-dd") + "T00:00:00Z";
-                //var yesterday_date = "?from=" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "T00:00:00Z";
-
-                //var url_find = url_country + countryName.Text + yesterday_date + today_date;
                 var res = await client.GetAsync(country_url);
                 
                 
