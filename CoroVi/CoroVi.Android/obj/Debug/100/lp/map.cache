@@ -1,4 +1,8 @@
 FormsViewGroup
+Microcharts.Droid
+SkiaSharp
+SkiaSharp.Views.Android
+SkiaSharp.Views.Forms
 Xamarin.AndroidX.Activity
 Xamarin.AndroidX.Annotation
 Xamarin.AndroidX.Annotation.Experimental

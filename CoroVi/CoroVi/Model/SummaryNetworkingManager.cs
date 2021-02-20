@@ -58,17 +58,22 @@ namespace CoroVi
             Console.WriteLine(todaydate);
 
             var final_url = url_dayone_country  + yesterdaydate + todaydate;
-            var res = await client.GetAsync(final_url);
-            if (res.StatusCode == HttpStatusCode.NotFound)
-                return new List<CountriesSummaryClass>();
-            try
-            {
-                var response = await client.GetStringAsync(final_url); //long string
-                //CountriesSummaryClass cs = JsonConvert.DeserializeObject<CountriesSummaryClass>(response);
-                Console.WriteLine(final_url);
-                var r = response[1];
+            
 
-                return JsonConvert.DeserializeObject<List<CountriesSummaryClass>>(response);
+            try {
+                //var res = await client.GetAsync(final_url);
+                var res = client.GetAsync(final_url).GetAwaiter().GetResult();
+                if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable)
+                    return new List<CountriesSummaryClass>();
+                try {
+                    var response = await client.GetStringAsync(final_url); //long string
+                    Console.WriteLine(final_url);
+                    return JsonConvert.DeserializeObject<List<CountriesSummaryClass>>(response);
+                } catch (Exception e) {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("ERROR: GetCountriesCovid not working");
+                    return null;
+                }
             }
             catch (Exception e)
             {
@@ -77,21 +82,67 @@ namespace CoroVi
                 return null;
             }
 
-            return null;
+            
+        }
+
+
+        public async Task<List<CountriesSummaryClass>> GetOneCountry(string country)
+        {
+            Console.WriteLine(yesterdaydate);
+            Console.WriteLine(todaydate);
+
+            var final_url = url_country + country + yesterdaydate + todaydate;
+
+            
+
+            try { 
+                var res = await client.GetAsync(final_url);
+                if (res.StatusCode == HttpStatusCode.NotFound)
+                    return new List<CountriesSummaryClass>();
+                try
+                {
+                    var response = await client.GetStringAsync(final_url); //long string
+                    Console.WriteLine(final_url);
+                    return JsonConvert.DeserializeObject<List<CountriesSummaryClass>>(response);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("ERROR: GetCountriesCovid not working");
+                    return null;
+                }
+            } catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("ERROR: GetCountriesCovid not working");
+                return null;
+            }
+
+
+            
         }
 
         public async Task<List<CountriesSummaryClass>> searchForCountries(string country)
         {
             var url_final = url_country + country + yesterdaydate + todaydate;
-            var response = await client.GetAsync(url_final);
-            if (response.StatusCode == HttpStatusCode.NotFound)
+
+            Console.WriteLine(url_final);
+
+            var res = await client.GetAsync(url_final);
+            if (res.StatusCode == HttpStatusCode.NotFound)
                 return new List<CountriesSummaryClass>();
-
-
-            var stringResponse = await response.Content.ReadAsStringAsync();
-            var dic = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, object>>>(stringResponse);
-            var array = dic.ElementAt(0).Value.ElementAt(1).Value;
-            return JsonConvert.DeserializeObject<List<CountriesSummaryClass>>(array.ToString());
+            try
+            {
+                var response = await client.GetStringAsync(url_final);
+                Console.WriteLine(url_final);
+                return JsonConvert.DeserializeObject<List<CountriesSummaryClass>>(response);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine("ERROR: searchForCountries not working");
+                return null;
+            }
         }
 
 

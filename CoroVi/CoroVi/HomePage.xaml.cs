@@ -21,8 +21,7 @@ namespace CoroVi
         private string url_worldTotal = "https://api.covid19api.com/world/total";
 
         //url for list of country names
-        private string url_dayone_country = "https://api.covid19api.com/dayone/country/south-africa";
-
+        private string url_dayone_country = "https://api.covid19api.com/country/canada";
 
         private HttpClient client = new HttpClient();
 
@@ -30,6 +29,7 @@ namespace CoroVi
         {
             InitializeComponent();
         }
+
 
         protected async override void OnAppearing()
         {
@@ -49,66 +49,22 @@ namespace CoroVi
             Console.WriteLine(cs.TotalDeaths);
             Console.WriteLine(cs.TotalRecovered);
 
-
             // XAML Sets and Displays the Global Data
             TotalConfirmed.Text = cs.TotalConfirmed.ToString();
             TotalDeaths.Text = cs.TotalDeaths.ToString();
             TotalRecovered.Text = cs.TotalRecovered.ToString();
 
-
-
-
             //countries
 
-
             base.OnAppearing();
-
-        }
+        }/**/
 
         void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
             ((Entry)sender).Text = string.Empty;
         }
-        /*public async void GetTotalCases()
-        {
-            // create new http client to handle the request
-            HttpClient client = new HttpClient();
 
-            // send GET request to return totals for all countries and store response in TotalData object
-
-        var totals_json = await client.GetStringAsync("https://corona.lmao.ninja/v2/all");
-
-            // deserialize the json response to a TotalData object 
-            TotalData totals = JsonConvert.DeserializeObject<TotalData>(totals_json);
-
-            // API returns an 'updated' field with the UNIX TIME of last update received 
-            // create a new DateTime object to represent 1/1/1970
-            DateTime lastUpdate = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-
-            // add the unix time elapsed since 1/1/1970 and convert to current local time
-            lastUpdate = lastUpdate.AddMilliseconds(totals.updated).ToLocalTime();
-
-            // set the time label to display current local time
-            updatelabel.Text = $"Last Update: {lastUpdate.ToString()}";
-
-            // set total data display labels with COVID-19 data returned from API call
-            caseslabel.Text = $"Total # of Cases: {totals.cases.ToString()}";
-            todaycaseslabel.Text = $"Total # of Cases Today: {totals.todayCases.ToString()}";
-            deathslabel.Text = $"Total # of Deaths: {totals.deaths.ToString()}";
-            todaydeathslabel.Text = $"Total # of Deaths Today: {totals.todayDeaths.ToString()}";
-            recoveredlabel.Text = $"Total # of Recovered: {totals.recovered.ToString()}";
-            activelabel.Text = $"Total # of Active: {totals.active.ToString()}";
-            criticallabel.Text = $"Total # of Critical: {totals.critical.ToString()}";
-            countriesaffectedlabel.Text = $"Total # of Countries Affected: {totals.affectedCountries.ToString()}";
-
-            // make the view visible
-            totalscroll.IsVisible = true;
-        }*/
-
-
-
-
-        async void Btn_country_clicked(System.Object sender, System.EventArgs e)
+        public async void Btn_country_clicked(System.Object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(countryName.Text))
             {
@@ -116,37 +72,38 @@ namespace CoroVi
             }
             else
             {
-
                 Lbl_country.Text = countryName.Text;
-                var url_country = "https://api.covid19api.com/country/";
-                var today_date = "&to=" + DateTime.Now.ToString("yyyy-MM-dd") + "T00:00:00Z";
-                var yesterday_date = "?from=" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "T00:00:00Z";
 
-                var url_find = url_country + countryName.Text + yesterday_date + today_date;
-                var res = await client.GetAsync(url_find);
-                if (res.StatusCode == HttpStatusCode.NotFound)
-                {
-                    
+                var country_url = url_dayone_country + summaryNetworkingManager.yesterdaydate + summaryNetworkingManager.todaydate;
+                Console.WriteLine(country_url);
+
+                //
+                
+                //var url_country = "https://api.covid19api.com/country/";
+                //var today_date = "&to=" + DateTime.Now.ToString("yyyy-MM-dd") + "T00:00:00Z";
+                //var yesterday_date = "?from=" + DateTime.Today.AddDays(-1).ToString("yyyy-MM-dd") + "T00:00:00Z";
+
+                //var url_find = url_country + countryName.Text + yesterday_date + today_date;
+                var res = await client.GetAsync(country_url);
+                
+                
+                if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable) {
                     await DisplayAlert("Error", "Please give me a correct country name", "OK");
                     Lbl_country.Text = "";
+                } else {
+                    summaryList.ItemsSource = null;
+
+                    var list = await summaryNetworkingManager.GetOneCountry(countryName.Text);
+                    summary_list = new ObservableCollection<CountriesSummaryClass>(list);
+
+                    summaryList.ItemsSource = summary_list;
+                    await DisplayAlert("Good", list.ToString(), "OK");
 
                 }
-                else {
-                    var res_ = await client.GetStringAsync(url_find);
-
-                    await DisplayAlert("Good Link", res_, "OK");
-                    
-
-                    //TotalConfirmed.Text = cs.TotalConfirmed.ToString();
-                    //TotalDeaths.Text = cs.TotalDeaths.ToString();
-                    //TotalRecovered.Text = cs.TotalRecovered.ToString();
-                }
-
-                Console.WriteLine(url_find);
-
-
             }
         }
+
+        /**/
     }
     
 }

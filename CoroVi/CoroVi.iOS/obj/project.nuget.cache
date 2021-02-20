@@ -1,12 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "s+3ngiwGb1ZDkSlSNELMiDN/Mj5H9ZWdybJmXwWmg8s5JhORq5t+ikJGNgJW2HsFM/aiJnUMTiY1JfZCeNrGbw==",
+  "dgSpecHash": "/MmHSCxFVh8gfT/iWrb139N6Zz/szPSsDoJe/myVL+i1Msmg6hrx/cyIxNZ3uXzVK6sCaPqCc8vj3QE2498tWg==",
   "success": true,
   "projectFilePath": "C:\\Users\\oyoni\\source\\repos\\CoroVi\\CoroVi\\CoroVi.iOS\\CoroVi.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\oyoni\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\microcharts.forms\\0.9.5.9\\microcharts.forms.0.9.5.9.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\skiasharp\\2.80.2\\skiasharp.2.80.2.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\skiasharp.views\\2.80.2\\skiasharp.views.2.80.2.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\skiasharp.views.forms\\2.80.2\\skiasharp.views.forms.2.80.2.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\oyoni\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
     "C:\\Users\\oyoni\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"

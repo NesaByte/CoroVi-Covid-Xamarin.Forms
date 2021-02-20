@@ -7,7 +7,6 @@
              >
     <ContentPage.Content>
         <StackLayout>
-
             <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10,10,10,10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60" /> 
@@ -26,17 +25,17 @@
 
             </Grid>
 
-            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10,10,10,10">
+            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10,10,10,10" BackgroundColor="#00AEC7">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100" />
-                    <RowDefinition Height="100" />
-                    <RowDefinition Height="100" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="80" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
- 
+
                 <yummy:PancakeView Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" BackgroundColor="#00AEC7" CornerRadius="20,20,20,20" HorizontalOptions="FillAndExpand" HeightRequest="150">
                     <Label x:Name="Lbl_country" Text="Global" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                 </yummy:PancakeView>
@@ -52,23 +51,48 @@
                 <yummy:PancakeView Grid.Row="2" Grid.Column="1" BackgroundColor="#FB9C80" CornerRadius="40,10,10,40" HorizontalOptions="FillAndExpand" HeightRequest="150">
                     <Label x:Name="TotalRecovered" Text="TotalDeaths" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
                 </yummy:PancakeView>
-
-
             </Grid>
-            
-            <ListView x:Name="summaryList" HasUnevenRows="True">
+
+
+            <ListView x:Name="summaryList" HasUnevenRows="True" Background="pink">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="0,13" >
-                                <StackLayout>
-                                    <Label Text="List"/>
-                                    <Label Text="{Binding Confirmed}" />
-                                    <Label Text="{Binding Deaths}"/>
-                                    <Label Text="{Binding Recovered}"/>
+                            <ViewCell.View>
+
+                                <StackLayout Padding="0,13" >
+                                    <StackLayout>
+                                        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10,0,10,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="100" />
+                                                <RowDefinition Height="100" />
+                                                <RowDefinition Height="100" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <yummy:PancakeView Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" BackgroundColor="#00AEC7" CornerRadius="20,20,20,20" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                                                <Label Text="{Binding Country}"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                            </yummy:PancakeView>
+
+                                            <yummy:PancakeView Grid.Row="0" Grid.Column="1" BackgroundColor="#68CAD7" CornerRadius="40,10,10,40" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                                                <Label Text="{Binding Confirmed}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                            </yummy:PancakeView>
+
+                                            <yummy:PancakeView Grid.Row="1" Grid.Column="1" BackgroundColor="#AABBF3" CornerRadius="40,10,10,40" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                                                <Label Text="{Binding Deaths}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                            </yummy:PancakeView>
+
+                                            <yummy:PancakeView Grid.Row="2" Grid.Column="1" BackgroundColor="#FB9C80" CornerRadius="40,10,10,40" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                                                <Label Text="{Binding Recovered}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                            </yummy:PancakeView>
+                                        </Grid>
+
+                                    </StackLayout>
                                 </StackLayout>
-                                <Label Text="{Binding Country}" HorizontalOptions="EndAndExpand"/>
-                            </StackLayout>
+                            </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
