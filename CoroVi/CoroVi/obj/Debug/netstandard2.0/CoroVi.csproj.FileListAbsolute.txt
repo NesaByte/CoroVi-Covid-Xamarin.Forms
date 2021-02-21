@@ -2,7 +2,6 @@ C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\bin\Debug\netstandard2.0\CoroVi
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\bin\Debug\netstandard2.0\CoroVi.dll
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\bin\Debug\netstandard2.0\ref\CoroVi.dll
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\bin\Debug\netstandard2.0\CoroVi.pdb
-C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\CoroVi.csprojAssemblyReference.cache
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\AccountPage.xaml.g.cs
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\HomePage.xaml.g.cs
@@ -15,3 +14,4 @@ C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\XamlC.
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\CoroVi.dll
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\ref\CoroVi.dll
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\CoroVi.pdb
+C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi\obj\Debug\netstandard2.0\CoroVi.csprojAssemblyReference.cache

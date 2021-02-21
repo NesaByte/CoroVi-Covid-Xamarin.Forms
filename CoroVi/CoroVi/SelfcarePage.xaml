@@ -1,14 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoroVi.SelfcarePage">
+             Background="#EEEFFB"
+             x:Class="CoroVi.SelfcarePage"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             >
     <ContentPage.Content>
-        <StackLayout BackgroundColor="pink">
-            <Label Text="SELF-CARE PAGE: Coming Soon!" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"/>
-            <Label Padding="25,25,25,25" 
-                   Text="This is where the SQLite will be used. The users will be ask to do a self assessment if they have Covid or not. The questions I will use are from this link: https://covid-19.ontario.ca/self-assessment/"
-                   VerticalOptions="StartAndExpand" 
-                   HorizontalOptions="CenterAndExpand"/>
+        <StackLayout Padding="5">
+
+            <StackLayout>
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="5,15,5,5" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="girl_circle.png" Aspect="AspectFit" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+                    <Image Source="stira.png" Aspect="AspectFit" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"/>
+
+                    <yummy:PancakeView Grid.Row="0" Grid.Column="1" BackgroundColor="#68CAD7" CornerRadius="40,20,5,40" Margin="0,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout Margin="15,15,0,0">
+                            <Label Text="Hi there!" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="How are you feeling today?" FontSize="13" TextColor="White" Margin="-1,-7,-1,-1"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="2" Grid.Column="0" BackgroundColor="#68CAD7" CornerRadius="20,40,40,5" Margin="0,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout Margin="15,15,0,0">
+                            <Label Text="Hi there!" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="How are you feeling today?" FontSize="13" TextColor="White" Margin="-1,-7,-1,-1"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" BackgroundColor="#00AEC7" CornerRadius="20,20,20,20" Margin="20,35,20,35" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout Margin="35,15,35,0">
+                            <Label  FontSize="15" TextColor="White" Text="Take this self-assessment if you were exposed to COVID-19 or have symptoms"/>
+                            <Button Text="Start self-Assessment" Clicked="addNewTask" Margin="50,10,50,10" FontSize="12" BackgroundColor="#68CAD7" TextColor="white"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+
+                </Grid>
+            </StackLayout>
+            <StackLayout>
+            <ListView x:Name="allTasksTable" ItemSelected="updateDB">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding task}" ImageSource="{Binding taskImage}">
+                            <ImageCell.ContextActions>
+                                <MenuItem Text="Delete" CommandParameter="{Binding .}" IsDestructive="True" Clicked="deleteFromDB"/>
+                            </ImageCell.ContextActions>
+
+
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackLayout>
+            
+            
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

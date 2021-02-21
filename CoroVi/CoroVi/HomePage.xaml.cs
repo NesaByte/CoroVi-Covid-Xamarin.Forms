@@ -21,7 +21,7 @@ namespace CoroVi
         private string url_worldTotal = "https://corona.lmao.ninja/v3/covid-19/all";
 
         //url for list of country names
-        private string url_dayone_country = "https://api.covid19api.com/country/canada";
+        private string url_country = "https://corona.lmao.ninja/v3/covid-19/countries/";
 
         private HttpClient client = new HttpClient();
 
@@ -57,7 +57,7 @@ namespace CoroVi
             //countries
 
             base.OnAppearing();
-        }/**/
+        } 
 
         void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
         {
@@ -66,37 +66,45 @@ namespace CoroVi
 
         public async void Btn_country_clicked(System.Object sender, System.EventArgs e)
         {
+
+
             if (string.IsNullOrEmpty(countryName.Text))
             {
                 await DisplayAlert("Error ", "You have to type in a country name", "OK");
             }
             else
             {
-                Lbl_country.Text = countryName.Text;
+                
 
-                var country_url = url_dayone_country + summaryNetworkingManager.yesterdaydate + summaryNetworkingManager.todaydate;
-                Console.WriteLine(country_url);
+                var url_toFind = url_country + countryName.Text;
 
-                var res = await client.GetAsync(country_url);
+                Console.WriteLine(url_toFind);
+
+                var res = await client.GetAsync(url_toFind);
                 
                 
                 if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable) {
-                    await DisplayAlert("Error", "Please give me a correct country name", "OK");
                     Lbl_country.Text = "";
+                    await DisplayAlert("Error", "Please give me a correct country name", "OK");
+                    
                 } else {
-                    summaryList.ItemsSource = null;
+                    var res_worldTotal = await client.GetStringAsync(url_toFind);
+                    CovidAllClass cs = JsonConvert.DeserializeObject<CovidAllClass>(res_worldTotal);
 
-                    var list = await summaryNetworkingManager.GetOneCountry(countryName.Text);
-                    summary_list = new ObservableCollection<CountriesSummaryClass>(list);
+                    Console.WriteLine(cs.cases);
+                    Console.WriteLine(cs.deaths);
+                    Console.WriteLine(cs.recovered);
 
-                    summaryList.ItemsSource = summary_list;
-                    await DisplayAlert("Good", list.ToString(), "OK");
+                    Lbl_country.Text = countryName.Text;
+                    
+                    // XAML Sets and Displays the Country Data
+                    FindTotalConfirmed.Text = cs.cases.ToString();
+                    FindTotalDeaths.Text = cs.deaths.ToString();
+                    FindTotalRecovered.Text = cs.recovered.ToString();
 
                 }
             }
         }
-
-        /**/
     }
     
 }
