@@ -41,6 +41,7 @@ namespace CoroVi
                 allAssesments.Add(newAssessment);
                 //allAssesmentTable.ItemsSource = allAssesments;
                 dbModel2.insertNewToDo(newAssessment);
+                await DisplayAlert("Success", "Thank you for completing your assessment today, checkout your AccountPage", "OK");
             }
         } 
         }

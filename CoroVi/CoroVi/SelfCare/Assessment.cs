@@ -13,7 +13,23 @@ namespace CoroVi
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
+        private DateTime _dateTaken = DateTime.Now;
         public DateTime dateTaken { set; get; }
+
+        //{
+        //    get { return _dateTaken; }
+        //    set
+        //    {
+        //        if (_dateTaken == value)
+        //            return;
+        //        _dateTaken = value;
+        //        if (PropertyChanged != null)
+        //        {
+
+        //            PropertyChanged(this, new PropertyChangedEventArgs(nameof(dateTaken)));
+        //        }
+        //    }
+        //}
 
         public bool bq1 { set; get; }
         public bool bq2 { set; get; }

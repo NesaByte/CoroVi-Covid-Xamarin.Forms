@@ -24,7 +24,9 @@ namespace CoroVi//.SelfCare
             //wait in this proc, until user did his input 
             var tcs = new TaskCompletionSource<Assessment>();
 
-            Grid grid = new Grid
+
+
+        Grid grid = new Grid
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -246,7 +248,7 @@ namespace CoroVi//.SelfCare
 
             grid.Children.Add(submit_button, 1, 12);
 
-            var da = Application.Current.MainPage.DisplayAlert("Success", "Thank you for completing your assessment", "OK");
+
 
             submit_button.Clicked += async (s, e) =>
             {

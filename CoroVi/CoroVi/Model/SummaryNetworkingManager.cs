@@ -34,6 +34,8 @@ namespace CoroVi
 
         private string url_country = "https://api.covid19api.com/country/";
 
+        private string url_allCountry = "https://corona.lmao.ninja/v3/covid-19/countries";
+
 
         private HttpClient client = new HttpClient();
          
@@ -43,32 +45,23 @@ namespace CoroVi
 
         public async Task<CovidSummaryClass> GetSummaryCovid()
         {
-
             var response = await client.GetStringAsync(url_total);
             CovidSummaryClass cs = JsonConvert.DeserializeObject<CovidSummaryClass>(response);
-            //Console.WriteLine(cs.TotalConfirmed);
 
             return JsonConvert.DeserializeObject<CovidSummaryClass>(response);
-
         }
 
-        public async Task<List<CountriesSummaryClass>> GetCountriesCovid()
+        public async Task<List<CountriesClass>> GetCountriesCovid()
         {
-            Console.WriteLine(yesterdaydate);
-            Console.WriteLine(todaydate);
-
-            var final_url = url_dayone_country  + yesterdaydate + todaydate;
-            
-
             try {
-                HttpResponseMessage res = await client.GetAsync(final_url);
-                //var res = client.GetAsync(final_url).GetAwaiter().GetResult();
+                HttpResponseMessage res = await client.GetAsync(url_allCountry);
+
                 if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable)
-                    return new List<CountriesSummaryClass>();
+                    return new List<CountriesClass>();
                 try {
-                    var response = await client.GetStringAsync(final_url); //long string
-                    Console.WriteLine(final_url);
-                    return JsonConvert.DeserializeObject<List<CountriesSummaryClass>>(response);
+                    var response = await client.GetStringAsync(url_allCountry); //long string
+                    //List<CountriesClass> allCountries = ;
+                    return JsonConvert.DeserializeObject<List<CountriesClass>>(response);
                 } catch (Exception e) {
                     Console.WriteLine(e.Message);
                     Console.WriteLine("ERROR: GetCountriesCovid not working");

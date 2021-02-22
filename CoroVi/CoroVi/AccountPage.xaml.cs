@@ -38,5 +38,23 @@ namespace CoroVi
             await Navigation.PushAsync(new AssessmentDetails(a));
             ((ListView)sender).SelectedItem = null;
         }
+
+        public void deleteFromDB(object sender, EventArgs e)
+        {
+            var toDelete = ((sender as Button).CommandParameter as Assessment);
+            SelfcarePage.allAssesments.Remove(toDelete);
+            SelfcarePage.dbModel2.deleteTask(toDelete);
+        }
+
+        public async void updateDB(object sender, EventArgs e)
+        {
+
+            var toUpdate = allAssesmentTable.SelectedItem as Assessment;
+            var updatedTask = await AssessmentManager.InputBox(this.Navigation, toUpdate);
+            if (updatedTask != null)
+            {
+                SelfcarePage.dbModel2.updateTask(updatedTask);
+            }
+        }
     }
 }
