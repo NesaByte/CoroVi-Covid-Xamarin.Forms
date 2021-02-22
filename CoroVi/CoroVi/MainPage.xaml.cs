@@ -13,6 +13,8 @@ namespace CoroVi
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
     }
 }

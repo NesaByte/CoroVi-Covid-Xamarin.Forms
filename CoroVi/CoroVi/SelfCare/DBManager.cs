@@ -14,24 +14,24 @@ namespace CoroVi//.SelfCare
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
         }
 
-        public async Task<ObservableCollection<toDoTask>> CreateTable()
+        public async Task<ObservableCollection<Assessment>> CreateTable()
         {
-            await _connection.CreateTableAsync<toDoTask>();
-            var todoTaskFromDB = await _connection.Table<toDoTask>().ToListAsync();
-            var allTasks = new ObservableCollection<toDoTask>(todoTaskFromDB);
-            return allTasks;
+            await _connection.CreateTableAsync<Assessment>();
+            var todoTaskFromDB = await _connection.Table<Assessment>().ToListAsync();
+            var allAssesments = new ObservableCollection<Assessment>(todoTaskFromDB);
+            return allAssesments;
         }
 
-        public void insertNewToDo(toDoTask task)
+        public void insertNewToDo(Assessment task)
         {
             _connection.InsertAsync(task);
         }
 
-        public void deleteTask(toDoTask toDelete)
+        public void deleteTask(Assessment toDelete)
         {
             _connection.DeleteAsync(toDelete);
         }
-        public void updateTask(toDoTask toUpdate)
+        public void updateTask(Assessment toUpdate)
         {
             _connection.UpdateAsync(toUpdate);
 

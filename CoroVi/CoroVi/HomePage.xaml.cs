@@ -28,6 +28,8 @@ namespace CoroVi
         public HomePage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
 
 
@@ -59,31 +61,21 @@ namespace CoroVi
             base.OnAppearing();
         } 
 
-        void Handle_Focused(object sender, Xamarin.Forms.FocusEventArgs e)
-        {
-            ((Entry)sender).Text = string.Empty;
-        }
-
         public async void Btn_country_clicked(System.Object sender, System.EventArgs e)
         {
-
-
             if (string.IsNullOrEmpty(countryName.Text))
             {
                 await DisplayAlert("Error ", "You have to type in a country name", "OK");
             }
             else
             {
-                
-
                 var url_toFind = url_country + countryName.Text;
 
                 Console.WriteLine(url_toFind);
 
                 var res = await client.GetAsync(url_toFind);
                 
-                
-                if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable) {
+                if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable || res.StatusCode == HttpStatusCode.BadGateway) {
                     Lbl_country.Text = "";
                     await DisplayAlert("Error", "Please give me a correct country name", "OK");
                     

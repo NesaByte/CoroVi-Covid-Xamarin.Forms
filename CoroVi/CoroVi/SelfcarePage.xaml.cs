@@ -13,60 +13,55 @@ namespace CoroVi
     [DesignTimeVisible(false)]
     public partial class SelfcarePage : ContentPage
     {
-        DBManager dbModel = new DBManager();
-        ObservableCollection<toDoTask> allTasks;
+        public static DBManager dbModel2 = new DBManager();
+        public static ObservableCollection<Assessment> allAssesments;
+
         public SelfcarePage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
 
         }
 
         protected async override void OnAppearing()
         {
 
-            allTasks = await dbModel.CreateTable();
-            allTasksTable.ItemsSource = allTasks;
+            allAssesments = await dbModel2.CreateTable();
+            //allAssesmentTable.ItemsSource = allAssesments;
             base.OnAppearing();
 
         }
 
-        public async void addNewTask(object sender, EventArgs e)
-        {
-            toDoTask newTask = await TaskManager.InputBox(this.Navigation, null);
-            if (newTask != null)
+        public async void startSelfAssessment(object sender, EventArgs e) {
+
+            Assessment newAssessment = await AssessmentManager.InputBox(this.Navigation, null);
+            if (newAssessment != null)
             {
-                allTasksTable.ItemsSource = null;
-                allTasks.Add(newTask);
-                allTasksTable.ItemsSource = allTasks;
-                dbModel.insertNewToDo(newTask);
+                //allAssesmentTable.ItemsSource = null;
+                allAssesments.Add(newAssessment);
+                //allAssesmentTable.ItemsSource = allAssesments;
+                dbModel2.insertNewToDo(newAssessment);
             }
-
-
+        } 
         }
 
-        public void deleteFromDB(object sender, EventArgs e)
+        /*public void deleteFromDB(object sender, EventArgs e)
         {
-            var toDelete = ((sender as MenuItem).CommandParameter as toDoTask);
-            allTasks.Remove(toDelete);
+            var toDelete = ((sender as MenuItem).CommandParameter as Assessment);
+            allAssesments.Remove(toDelete);
             dbModel.deleteTask(toDelete);
-        }
+        }*/
 
-        public async void updateDB(object sender, EventArgs e)
+        /*public async void updateDB(object sender, EventArgs e)
         {
 
 
-            var toUpdate = allTasksTable.SelectedItem as toDoTask;
-            var updatedTask = await TaskManager.InputBox(this.Navigation, toUpdate);
+            var toUpdate = allAssesmentTable.SelectedItem as Assessment;
+            var updatedTask = await TaskManager.InputBox(this.Navigation, Assessment);
             if (updatedTask != null)
             {
                 dbModel.updateTask(updatedTask);
             }
-
-
-
-
-
-        }
+        }*/ 
     }
 
-}

@@ -1,16 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoroVi.AccountPage">
+             x:Class="CoroVi.AccountPage"
+             Background="#EEEFFB"
+             NavigationPage.HasNavigationBar="False">
+    
     <ContentPage.Content>
-        <StackLayout BackgroundColor="pink">
-            <Label Text="ACCOUNT PAGE: Coming Soon!" 
-                           VerticalOptions="EndAndExpand" 
-                           HorizontalOptions="CenterAndExpand"/>
-            <Label Padding="25,25,25,25" 
-                   Text="This is where the users are able to see their status, if they have Covid or not. And this will also display some tips and ways to self-isolate or Covid prevention"
-                   VerticalOptions="StartAndExpand" 
-                   HorizontalOptions="CenterAndExpand"/>
+        <StackLayout Padding="5">
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                
+                <Image Source="corovi_icon.png" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" Margin="20">
+                    <ListView x:Name="allAssesmentTable" HasUnevenRows="True" ItemTapped="OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Vertical" Padding="2">
+                                            <StackLayout HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding dateTaken, StringFormat='Assessment taken at {0}'}" TextColor="#0A345E" FontAttributes="Bold"/>
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="StartAndExpand">
+                                                <Label Text="Click more for details" Grid.Row="0" Grid.Column="0"  Margin="-1,-7,-1,3"/>
+                                                <!--<Label Text="{Binding sb1}" TextColor="black"/>
+                                                <Label Text="{Binding sb2}" TextColor="black" Grid.Row="0" Grid.Column="1"/>
+                                                <Label Text="{Binding sb3}" TextColor="black" Grid.Row="0" Grid.Column="2"/>-->
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+            </StackLayout> 
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoroVi.AssessmentDetails">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <StackLayout Padding="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label x:Name="x_sb1" Text=""/>
+                <Label x:Name="x_sb2" Text=""/>
+                <Label x:Name="x_sb3" Text=""/>
+                <Label x:Name="x_sb4" Text=""/>
+                <Label x:Name="x_sb5" Text=""/>
+                <Label x:Name="x_sb6" Text=""/>
+                <Label x:Name="x_sb7" Text=""/>
+                <Label x:Name="x_sb8" Text=""/>
+                <Label x:Name="x_sb9" Text=""/>
+                <Label x:Name="x_sb10" Text=""/>
+                <Label x:Name="x_sb11" Text=""/>
+                <Label x:Name="x_sb12" Text=""/>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
