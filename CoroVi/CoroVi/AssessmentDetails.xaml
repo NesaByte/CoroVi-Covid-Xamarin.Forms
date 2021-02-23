@@ -1,12 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CoroVi.AssessmentDetails">
+             x:Class="CoroVi.AssessmentDetails"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             >
     <ContentPage.Content>
         <RelativeLayout>
             <StackLayout Padding="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <Label x:Name="x_sb1" Text=""/>
-                <Label x:Name="x_sb2" Text=""/>
+
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10, 0,10,0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+
+                    </Grid.ColumnDefinitions>
+                    
+                    <yummy:PancakeView Grid.Row="0" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                    <StackLayout>
+                        <Label x:Name="x_sb1" Text="" Margin="10"/>
+
+                    </StackLayout>
+                </yummy:PancakeView>
+                    <yummy:PancakeView Grid.Row="1" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                    <StackLayout>
+                            <Label x:Name="x_sb2" Text="" Margin="10"/>
+
+                    </StackLayout>
+                </yummy:PancakeView>
+                    
+                </Grid>
+
+                
+
                 <Label x:Name="x_sb3" Text=""/>
                 <Label x:Name="x_sb4" Text=""/>
                 <Label x:Name="x_sb5" Text=""/>

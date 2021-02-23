@@ -143,54 +143,7 @@ namespace CoroVi
             }
         }
 
-        public async void Btn_countryFind_clicked(System.Object sender, System.EventArgs e)
-        {
-            /*
-            if (string.IsNullOrEmpty(countryName.Text))
-            {
-                await DisplayAlert("Error ", "You have to type in a country name", "OK");
-            }
-            else
-            {
-                var url_toFind = url_country + countryName.Text;
-
-                Console.WriteLine(url_toFind);
-
-                var res = await client.GetAsync(url_toFind);
-
-                if (res.StatusCode == HttpStatusCode.NotFound || res.StatusCode == HttpStatusCode.ServiceUnavailable || res.StatusCode == HttpStatusCode.BadGateway)
-                {
-                    //country.Text = "";
-                    //TotalConfirmed.Text = "";
-                    //TotalDeaths.Text = "";
-                    //TotalRecovered.Text = "";
-
-                    await DisplayAlert("Error", "Please give me a correct country name", "OK");
-
-                }
-                else
-                {
-                    var res_worldTotal = await client.GetStringAsync(url_toFind);
-                    CovidAllClass cs = JsonConvert.DeserializeObject<CovidAllClass>(res_worldTotal);
-
-                    Console.WriteLine(cs.cases);
-                    Console.WriteLine(cs.deaths);
-                    Console.WriteLine(cs.recovered);
-
-                    country.Text = countryName.Text;
-
-                    // XAML Sets and Displays the Country Data
-                    TotalConfirmed.Text = cs.cases.ToString();
-                    TotalDeaths.Text = cs.deaths.ToString();
-                    TotalRecovered.Text = cs.recovered.ToString();
-
-                    await DisplayAlert("Error", "Please give me a correct country name", "OK");
-
-
-                }
-            }
-            */
-        }
+       
     }
     
 }

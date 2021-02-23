@@ -38,6 +38,12 @@ namespace CoroVi
             await Navigation.PushAsync(new AssessmentDetails(a));
             ((ListView)sender).SelectedItem = null;
         }
+        async public void Details_Clicked(object sender, EventArgs e)
+        {
+            var a = ((sender as Button).CommandParameter as Assessment);
+            await Navigation.PushAsync(new AssessmentDetails(a));
+            //((ListView)sender).SelectedItem = null;
+        }
 
         public void deleteFromDB(object sender, EventArgs e)
         {
@@ -49,7 +55,7 @@ namespace CoroVi
         public async void updateDB(object sender, EventArgs e)
         {
 
-            var toUpdate = allAssesmentTable.SelectedItem as Assessment;
+            var toUpdate = ((sender as Button).CommandParameter as Assessment);
             var updatedTask = await AssessmentManager.InputBox(this.Navigation, toUpdate);
             if (updatedTask != null)
             {
