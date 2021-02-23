@@ -5,7 +5,7 @@
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              >
     <ContentPage.Content>
-        <RelativeLayout>
+        <ScrollView>
             <StackLayout Padding="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                 <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10, 0,10,0" >
@@ -15,12 +15,14 @@
                         <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="70" />
                         <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
                         <RowDefinition Height="50" />
-                        <RowDefinition Height="50" />
+
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -28,34 +30,81 @@
 
                     </Grid.ColumnDefinitions>
                     
-                    <yummy:PancakeView Grid.Row="0" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
-                    <StackLayout>
-                        <Label x:Name="x_sb1" Text="" Margin="10"/>
-
+                <yummy:PancakeView Grid.Row="0" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                <StackLayout>
+                        <Label x:Name="x_sb1" Text="" Margin="10" FontSize="10"/>
                     </StackLayout>
                 </yummy:PancakeView>
                     <yummy:PancakeView Grid.Row="1" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
                     <StackLayout>
-                            <Label x:Name="x_sb2" Text="" Margin="10"/>
-
+                            <Label x:Name="x_sb2" Text="" Margin="10" FontSize="10"/>
                     </StackLayout>
                 </yummy:PancakeView>
-                    
+
+                    <yummy:PancakeView Grid.Row="2" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb3" Text="" Margin="10" FontSize="10"/>
+                            
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="3" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb4" Text="" Margin="10" FontSize="10"/>
+                            
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="4" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb5" Text="" Margin="10" FontSize="10"/>
+                            
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="5" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb6" Text="" Margin="10" FontSize="10"/>
+                            </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="6" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="250">
+                        <StackLayout>
+                            <Label x:Name="x_sb7" Text="" Margin="10" FontSize="10"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="7" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb8" Text="" Margin="10" FontSize="10"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="8" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb9" Text="" Margin="10" FontSize="10"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="9" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb10" Text="" Margin="10" FontSize="10"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="10" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout>
+                            <Label x:Name="x_sb11" Text="" Margin="10" FontSize="10"/>
+                        </StackLayout>
+                    </yummy:PancakeView>
+
+                    <yummy:PancakeView Grid.Row="11" Grid.Column="1" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="250">
+                        <StackLayout>
+                            <Label x:Name="x_sb12" Text="" Margin="10" FontSize="10"/>
+                        </StackLayout>
+                    </yummy:PancakeView> 
                 </Grid>
-
-                
-
-                <Label x:Name="x_sb3" Text=""/>
-                <Label x:Name="x_sb4" Text=""/>
-                <Label x:Name="x_sb5" Text=""/>
-                <Label x:Name="x_sb6" Text=""/>
-                <Label x:Name="x_sb7" Text=""/>
-                <Label x:Name="x_sb8" Text=""/>
-                <Label x:Name="x_sb9" Text=""/>
-                <Label x:Name="x_sb10" Text=""/>
-                <Label x:Name="x_sb11" Text=""/>
-                <Label x:Name="x_sb12" Text=""/>
             </StackLayout>
-        </RelativeLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

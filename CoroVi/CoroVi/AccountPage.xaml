@@ -36,11 +36,11 @@
                                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
                                                 <!--<Label Text="Click more for details" Grid.Row="0" Grid.Column="0" FontSize="12" Margin="-1,-7,-1,3"/>-->
                                                 <StackLayout VerticalOptions="Center" Orientation="Horizontal" Padding="50, 0, 50, 0">
-                                                    <Button Text="Details" Margin="0,-7,0,3" WidthRequest="50" HeightRequest="30" FontSize="10" BackgroundColor="#AABBF3" Padding="-5" 
+                                                    <Button Text="Details" Margin="0,-7,0,3" WidthRequest="50" HeightRequest="30" FontSize="8" BackgroundColor="#AABBF3" Padding="-5" 
                                                             Clicked="Details_Clicked"  CommandParameter="{Binding .}"/>
-                                                    <Button Text="Update" Margin="0,-7,0,3" WidthRequest="50" HeightRequest="30" FontSize="10" BackgroundColor="#AABBF3" Padding="-5"
+                                                    <Button Text="Update" Margin="0,-7,0,3" WidthRequest="50" HeightRequest="30" FontSize="8" BackgroundColor="#AABBF3" Padding="-5"
                                                             Clicked="updateDB" CommandParameter="{Binding .}"/>
-                                                    <Button Text="Remove" Margin="0,-7,0,3" WidthRequest="50" HeightRequest="30" FontSize="10" BackgroundColor="#AABBF3" Padding="-5" 
+                                                    <Button Text="Remove" Margin="0,-7,0,3" WidthRequest="50" HeightRequest="30" FontSize="8" BackgroundColor="#AABBF3" Padding="-5" 
                                                             Clicked="deleteFromDB" CommandParameter="{Binding .}"/>
                                                 </StackLayout>
                                                 <!--<Label Text="{Binding sb1}" TextColor="black"/>
