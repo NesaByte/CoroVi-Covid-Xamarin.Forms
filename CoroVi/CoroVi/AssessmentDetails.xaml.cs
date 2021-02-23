@@ -10,8 +10,27 @@ using Xamarin.Forms.Xaml;
 namespace CoroVi
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class AssessmentDetails : ContentPage
     {
+
+        public string bad = "#FB9C80";
+        public string good = "#00AEC7";
+
+        public Color BGColor1 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor2 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor3 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor4 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor5 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor6 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor7 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor8 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor9 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor10 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor11 { get; set; } = Color.FromHex("#00AEC7");
+        public Color BGColor12 { get; set; } = Color.FromHex("#00AEC7");
+
+        
         public AssessmentDetails(Assessment a)
         {
             InitializeComponent();
@@ -28,6 +47,21 @@ namespace CoroVi
             x_sb10.Text = a.sb10.ToString();
             x_sb11.Text = a.sb11.ToString();
             x_sb12.Text = a.sb12.ToString();
+
+            if (a.bq1) { BGColor1 = Color.FromHex("#FB9C80"); }
+            if (a.bq2) { BGColor2 = Color.FromHex("#FB9C80"); }
+            if (a.bq3) { BGColor3 = Color.FromHex("#FB9C80"); }
+            if (a.bq4) { BGColor4 = Color.FromHex("#FB9C80"); }
+            if (a.bq5) { BGColor5 = Color.FromHex("#FB9C80"); }
+            if (a.bq6) { BGColor6 = Color.FromHex("#FB9C80"); }
+            if (a.bq7) { BGColor7 = Color.FromHex("#FB9C80"); }
+            if (a.bq8) { BGColor8 = Color.FromHex("#FB9C80"); }
+            if (a.bq9) { BGColor9 = Color.FromHex("#FB9C80"); }
+            if (a.bq10) { BGColor10 = Color.FromHex("#FB9C80"); } 
+            if (a.bq11) { BGColor11 = Color.FromHex("#FB9C80"); }
+            if (a.bq12) { BGColor12 = Color.FromHex("#FB9C80"); }
+
+            BindingContext = this;
 
         }
     }

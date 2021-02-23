@@ -61,6 +61,7 @@ C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\res\drawa
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\res\drawable\girl_circle.png
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\res\drawable\stira.png
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\res\drawable\corovi_icon.png
+C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\res\drawable\star.png
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\uploadflags.txt
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\resolvedassemblies.hash
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\android\assets\CoroVi.Android.dll
@@ -615,4 +616,3 @@ C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_Co
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_GenerateJavaStubs.stamp
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\res\drawable\star.png

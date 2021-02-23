@@ -27,7 +27,6 @@ namespace CoroVi
         {
 
             allAssesments = await dbModel2.CreateTable();
-            //allAssesmentTable.ItemsSource = allAssesments;
             base.OnAppearing();
 
         }
@@ -41,28 +40,17 @@ namespace CoroVi
                 allAssesments.Add(newAssessment);
                 //allAssesmentTable.ItemsSource = allAssesments;
                 dbModel2.insertNewToDo(newAssessment);
-                await DisplayAlert("Success", "Thank you for completing your assessment today, checkout your AccountPage", "OK");
+
+                if (newAssessment.bq1 || newAssessment.bq2 || newAssessment.bq3 || newAssessment.bq4 || newAssessment.bq5 || newAssessment.bq6 || newAssessment.bq7 || newAssessment.bq8 || newAssessment.bq9 || newAssessment.bq10 || newAssessment.bq11 || newAssessment.bq12)
+                {
+                    await DisplayAlert("Be Warned!", "You might be COVID-19 positive, we advice you to take the swab test", "OK");
+
+                }
+                else { 
+                    await DisplayAlert("Good Job!", "You are COVID-free, please continue to follow COVID guidelines", "OK");
+                }
             }
         } 
-        }
-
-        /*public void deleteFromDB(object sender, EventArgs e)
-        {
-            var toDelete = ((sender as MenuItem).CommandParameter as Assessment);
-            allAssesments.Remove(toDelete);
-            dbModel.deleteTask(toDelete);
-        }*/
-
-        /*public async void updateDB(object sender, EventArgs e)
-        {
-
-
-            var toUpdate = allAssesmentTable.SelectedItem as Assessment;
-            var updatedTask = await TaskManager.InputBox(this.Navigation, Assessment);
-            if (updatedTask != null)
-            {
-                dbModel.updateTask(updatedTask);
-            }
-        }*/ 
-    }
+    } 
+}
 

@@ -36,5 +36,5 @@ namespace CoroVi//.SelfCare
             _connection.UpdateAsync(toUpdate);
 
         }
-    }
+    } 
 }

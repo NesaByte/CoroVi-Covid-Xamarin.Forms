@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace CoroVi
 {
@@ -14,22 +15,7 @@ namespace CoroVi
         public int Id { get; set; }
 
         private DateTime _dateTaken = DateTime.Now;
-        public DateTime dateTaken { set; get; }
-
-        //{
-        //    get { return _dateTaken; }
-        //    set
-        //    {
-        //        if (_dateTaken == value)
-        //            return;
-        //        _dateTaken = value;
-        //        if (PropertyChanged != null)
-        //        {
-
-        //            PropertyChanged(this, new PropertyChangedEventArgs(nameof(dateTaken)));
-        //        }
-        //    }
-        //}
+        public DateTime dateTaken { set; get; } 
 
         public bool bq1 { set; get; }
         public bool bq2 { set; get; }
@@ -152,11 +138,10 @@ namespace CoroVi
         {
             get
             {
-                if (bq12) return "You have Extreme tiredness";
-                else return "You have NO Extreme tiredness";
+                if (bq12) return "You are feeling Extreme tiredness";
+                else return "You are NOT feeling Extreme tiredness";
             }
             set { }
-        } 
-
+        }
     }
 }

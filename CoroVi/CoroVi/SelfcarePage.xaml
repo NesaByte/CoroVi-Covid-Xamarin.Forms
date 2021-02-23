@@ -46,42 +46,8 @@
                             <Button Text="Start self-Assessment" Clicked="startSelfAssessment" Margin="60,0,60,10" FontSize="Micro" BackgroundColor="#68CAD7" TextColor="white"/>
                         </StackLayout>
                     </yummy:PancakeView>
-
-
                 </Grid>
-            </StackLayout>
-            <!--<StackLayout>
-            <ListView x:Name="allAssesmentTable">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="2">
-                                <StackLayout VerticalOptions="Start" >
-                                    <Label Text="{Binding bq1}"/>
-                                    <Label Text="{Binding sb1}" TextColor="red"/>
-                                </StackLayout>
-                                <StackLayout VerticalOptions="Start" >
-                                    <Label Text="{Binding bq2}"/>
-                                    <Label Text="{Binding sb2}" TextColor="red"/>
-                                </StackLayout>
-                                <StackLayout VerticalOptions="Start" >
-                                    <Label Text="{Binding bq3}"/>
-                                    <Label Text="{Binding sb3}" TextColor="red"/>
-                                </StackLayout>
-                                <StackLayout HorizontalOptions="EndAndExpand">
-                                    <Label Text="{Binding dateTaken}"/>
-                                </StackLayout>
-
-                            </StackLayout>
-                        </ViewCell>
-                        </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            </StackLayout>-->
-            
-            
-            
-            
+            </StackLayout> 
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

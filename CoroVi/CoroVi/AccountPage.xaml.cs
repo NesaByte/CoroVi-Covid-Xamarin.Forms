@@ -20,18 +20,14 @@ namespace CoroVi
 
         protected async override void OnAppearing()
         {
-
             SelfcarePage.allAssesments = await SelfcarePage.dbModel2.CreateTable();
             allAssesmentTable.ItemsSource = SelfcarePage.allAssesments;
             base.OnAppearing();
-
         }
 
         async public void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) return;
-
-            //Assessment a = e.SelectedItem as Assessment;
 
             Assessment a = (Assessment)((ListView)sender).SelectedItem;
 
@@ -42,7 +38,6 @@ namespace CoroVi
         {
             var a = ((sender as Button).CommandParameter as Assessment);
             await Navigation.PushAsync(new AssessmentDetails(a));
-            //((ListView)sender).SelectedItem = null;
         }
 
         public void deleteFromDB(object sender, EventArgs e)
@@ -54,7 +49,6 @@ namespace CoroVi
 
         public async void updateDB(object sender, EventArgs e)
         {
-
             var toUpdate = ((sender as Button).CommandParameter as Assessment);
             var updatedTask = await AssessmentManager.InputBox(this.Navigation, toUpdate);
             if (updatedTask != null)
