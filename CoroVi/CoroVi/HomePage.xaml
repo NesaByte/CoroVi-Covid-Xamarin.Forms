@@ -13,6 +13,8 @@
                 <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="10, 0,10,0" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60" />
+                        <RowDefinition Height="50" />
+
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>
@@ -22,12 +24,27 @@
                     </Grid.ColumnDefinitions>
                     <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="countryName" Placeholder="Enter Country" HorizontalOptions="FillAndExpand" Margin="20,0,0,0" TextColor="Black" PlaceholderColor="#B0DCE2"/>
                     <Button Grid.Row="0" Grid.Column="2" x:Name="Btn_country" Text="Enter" FontSize="14" Clicked="Btn_country_clicked" Margin="10,8,10,8" BackgroundColor="#68CAD7"/>
+
+                    <StackLayout  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="250" Margin="50,0,50,0">
+                        <yummy:PancakeView BackgroundColor="#00AEC7" Margin="8" CornerRadius="15" HorizontalOptions="FillAndExpand" >
+                            <StackLayout>
+                                <Label x:Name="country" Text="Global" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="Large" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </yummy:PancakeView>
+                    </StackLayout>
+
+                    <ImageButton Source="star.png"  Grid.Row="1" Grid.Column="2" Margin="15" BackgroundColor="Transparent"
+                                 HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Clicked="Star_Clicked" />
+
+
                 </Grid>
 
+                
+                
             </StackLayout>
             
             <StackLayout>
-                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="15,15,15,25" >
+                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="15,0,15,0" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100" />
                         <RowDefinition Height="100" />
@@ -40,14 +57,54 @@
                     <yummy:PancakeView Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" BackgroundColor="#0193A8" Margin="15,15,15,15" CornerRadius="20,20,20,20" HorizontalOptions="FillAndExpand" HeightRequest="150">
                     </yummy:PancakeView>
 
-                    <yummy:PancakeView Grid.Row="0" Grid.Column="0" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="20,40,40,5" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                    <!--<yummy:PancakeView Grid.Row="0" Grid.Column="0" BackgroundColor="#00AEC7" Margin="5,5,5,5" CornerRadius="20,40,40,5" HorizontalOptions="FillAndExpand" HeightRequest="150">
                         <StackLayout>
                             <Image Source="globe.png" Aspect="Fill" /> 
                         </StackLayout>
+                    </yummy:PancakeView>-->
+
+                    <!--<Label x:Name="country"  Grid.Row="0" Grid.Column="0" Text="Global" FontSize="Large" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />-->
+
+                    <yummy:PancakeView Grid.Row="1" Grid.Column="0" BackgroundColor="#DBCD74" CornerRadius="20,5,40,40" Margin="5,0,5,5" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout Margin="5,15,0,0">
+                            <Label x:Name="faves" Text="Favorite Country List" FontSize="Small" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
+                            <StackLayout>
+                                <ListView x:Name="allFaves" HasUnevenRows="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout>
+                                                    <StackLayout Orientation="Vertical" Padding="2">
+                                                        <StackLayout HorizontalOptions="CenterAndExpand">
+                                                            <yummy:PancakeView BackgroundColor="#68CAD7" CornerRadius="15" Margin="5,0,0,5" HorizontalOptions="FillAndExpand">
+                                                                <StackLayout Margin="5">
+                                                                    <Label Text="{Binding country}" FontSize="Micro" TextColor="White"/>
+                                                                </StackLayout>
+                                                            </yummy:PancakeView>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+
+                            </StackLayout>
+                        </StackLayout>
                     </yummy:PancakeView>
+                    
+                    <yummy:PancakeView Grid.Row="0" Grid.Column="0" BackgroundColor="#AABBF3" CornerRadius="20,40,40,5" Margin="5,0,5,5" HorizontalOptions="FillAndExpand" HeightRequest="150">
+                        <StackLayout Margin="25,15,0,0">
+                            <Label x:Name="TotalRecovered" Text="" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Total Recovered" FontSize="8" TextColor="White" Margin="-1,-7,-1,-1"/>
 
-                    <Label x:Name="country"  Grid.Row="0" Grid.Column="0" Text="Global" FontSize="Large" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
-
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                <Label x:Name="TodayRecovered" Text="0" FontSize="Small" TextColor="White" Margin="0,0,20,0" IsVisible="false"/>
+                                <Label Text="{Binding Source={x:Reference TodayRecovered}, Path=Text, StringFormat='+{0} New Recovered'}" FontSize="8" TextColor="White" Margin="0,0,20,0"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </yummy:PancakeView>
+                    
                     <yummy:PancakeView Grid.Row="0" Grid.Column="1" BackgroundColor="#68CAD7" CornerRadius="40,20,5,40" Margin="5,5,5,5" HorizontalOptions="FillAndExpand" HeightRequest="150">
                         <StackLayout Margin="25,15,0,0">
                             <Label x:Name="TotalConfirmed" Text="" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
@@ -72,17 +129,7 @@
                         </StackLayout>
                     </yummy:PancakeView>
 
-                    <yummy:PancakeView Grid.Row="1" Grid.Column="0" BackgroundColor="#AABBF3" CornerRadius="40,5,20,40" Margin="5,0,5,5" HorizontalOptions="FillAndExpand" HeightRequest="150">
-                        <StackLayout Margin="25,15,0,0">
-                            <Label x:Name="TotalRecovered" Text="" FontSize="Large" FontAttributes="Bold" TextColor="White"/>
-                            <Label Text="Total Recovered" FontSize="8" TextColor="White" Margin="-1,-7,-1,-1"/>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                                <Label x:Name="TodayRecovered" Text="0" FontSize="Small" TextColor="White" Margin="0,0,20,0" IsVisible="false"/>
-                                <Label Text="{Binding Source={x:Reference TodayRecovered}, Path=Text, StringFormat='+{0} New Recovered'}" FontSize="8" TextColor="White" Margin="0,0,20,0"/>
-                            </StackLayout>
-                        </StackLayout>
-                    </yummy:PancakeView>
+                    
                 </Grid>
             </StackLayout> 
             <StackLayout>

@@ -28,22 +28,22 @@
 
                     <yummy:PancakeView Grid.Row="0" Grid.Column="1" BackgroundColor="#68CAD7" CornerRadius="40,20,2,20" Margin="0,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
                         <StackLayout Margin="15,15,0,0">
-                            <Label Text="Hi there!" FontSize="18" FontAttributes="Bold" TextColor="White"/>
-                            <Label Text="How are you feeling today?" FontSize="8" TextColor="White" Margin="-1,-7,-1,-1"/>
+                            <Label Text="Hi there!" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="How are you feeling today?" FontSize="Micro" TextColor="White" Margin="-1,-7,-1,-1"/>
                         </StackLayout>
                     </yummy:PancakeView>
 
                     <yummy:PancakeView Grid.Row="2" Grid.Column="0" BackgroundColor="#68CAD7" CornerRadius="20,40,20,2" Margin="0,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
                         <StackLayout Margin="15,15,0,0">
-                            <Label Text="Fight!" FontSize="18" FontAttributes="Bold" TextColor="White"/>
-                            <Label Text="Let's unite to defeat Covid-19" FontSize="8" TextColor="White" Margin="-1,-7,-1,-1"/>
+                            <Label Text="Fight!" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Let's unite to defeat Covid-19" FontSize="Micro" TextColor="White" Margin="-1,-7,-1,-1"/>
                         </StackLayout>
                     </yummy:PancakeView>
 
                     <yummy:PancakeView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" BackgroundColor="#00AEC7" CornerRadius="20,20,20,20" Margin="20,35,20,35" HorizontalOptions="FillAndExpand" HeightRequest="150">
                         <StackLayout Margin="35,15,35,0">
-                            <Label  FontSize="Micro" TextColor="White" Text="Take this self-assessment if you were exposed to COVID-19 or have symptoms"/>
-                            <Button Text="Start self-Assessment" Clicked="startSelfAssessment" Margin="40,0,40,10" FontSize="8" BackgroundColor="#68CAD7" TextColor="white"/>
+                            <Label  FontSize="Small" TextColor="White" Text="Take this self-assessment if you were exposed to COVID-19 or have symptoms"/>
+                            <Button Text="Start self-Assessment" Clicked="startSelfAssessment" Margin="60,0,60,10" FontSize="Micro" BackgroundColor="#68CAD7" TextColor="white"/>
                         </StackLayout>
                     </yummy:PancakeView>
 

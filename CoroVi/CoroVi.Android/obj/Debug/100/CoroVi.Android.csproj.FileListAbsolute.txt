@@ -615,3 +615,4 @@ C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_Co
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_GenerateJavaStubs.stamp
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\oyoni\source\repos\CoroVi\CoroVi\CoroVi.Android\obj\Debug\100\res\drawable\star.png
