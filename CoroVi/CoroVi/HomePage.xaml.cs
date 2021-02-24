@@ -143,10 +143,6 @@ namespace CoroVi
             }
         }
 
-
-        public async void Star_Clicked(System.Object sender, System.EventArgs e) { 
-            
-        }
             
     }
     

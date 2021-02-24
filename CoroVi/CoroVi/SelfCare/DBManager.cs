@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using SQLite;
 using Xamarin.Forms;
 
-namespace CoroVi//.SelfCare
+namespace CoroVi
 {
     public class DBManager
     {

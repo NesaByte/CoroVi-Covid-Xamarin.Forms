@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace CoroVi//.SelfCare
+namespace CoroVi 
 {
     public class AssessmentManager
     {
@@ -97,8 +97,8 @@ namespace CoroVi//.SelfCare
             Label q1_title = new Label
             {
                 Text = "Fever and/or chills",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes =FontAttributes.Bold,
+                FontSize= Device.GetNamedSize(NamedSize.Large, typeof(Label)), 
             };
             Label q1_desc = new Label { Text = "Temperature of 37.8 degrees Celsius/100 degrees Fahrenheit or higher", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q1_sl = new StackLayout { Children = { q1_title, q1_desc }, };
@@ -109,8 +109,8 @@ namespace CoroVi//.SelfCare
             Label q2_title = new Label
             {
                 Text = "Cough or barking cough",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q2_desc = new Label { Text = "Continuous, more than usual, making a whistling noise when breathing", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q2_sl = new StackLayout { Children = { q2_title, q2_desc }, };
@@ -121,8 +121,8 @@ namespace CoroVi//.SelfCare
             Label q3_title = new Label
             {
                 Text = "Shortness of breath",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q3_desc = new Label { Text = "Out of breath, unable to breathe deeply", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q3_sl = new StackLayout { Children = { q3_title, q3_desc }, };
@@ -133,8 +133,8 @@ namespace CoroVi//.SelfCare
             Label q4_title = new Label
             {
                 Text = "Sore throat",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q4_desc = new Label { Text = "Not related to seasonal allergies, acid reflux, or other known causes or conditions you already have", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q4_sl = new StackLayout { Children = { q4_title, q4_desc }, };
@@ -145,8 +145,8 @@ namespace CoroVi//.SelfCare
             Label q5_title = new Label
             {
                 Text = "Difficulty swallowing",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q5_desc = new Label { Text = "Painful swallowing (not related to other known causes or conditions you already have)", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q5_sl = new StackLayout { Children = { q5_title, q5_desc }, };
@@ -157,8 +157,8 @@ namespace CoroVi//.SelfCare
             Label q6_title = new Label
             {
                 Text = "Runny or stuffy/congested nose",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q6_desc = new Label { Text = "Not related to seasonal allergies, being outside in cold weather, or other known causes or conditions you already have", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q6_sl = new StackLayout { Children = { q6_title, q6_desc }, };
@@ -169,8 +169,8 @@ namespace CoroVi//.SelfCare
             Label q7_title = new Label
             {
                 Text = "Decrease or loss of taste or smell",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q7_desc = new Label { Text = "Not related to seasonal allergies, neurological disorders, or other known causes or conditions you already have", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q7_sl = new StackLayout { Children = { q7_title, q7_desc }, };
@@ -181,8 +181,8 @@ namespace CoroVi//.SelfCare
             Label q8_title = new Label
             {
                 Text = "Pink eye",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q8_desc = new Label { Text = "Conjunctivitis (not related to reoccurring styes or other known causes or conditions you already have)", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q8_sl = new StackLayout { Children = { q8_title, q8_desc }, };
@@ -193,8 +193,8 @@ namespace CoroVi//.SelfCare
             Label q9_title = new Label
             {
                 Text = "Headache",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q9_desc = new Label { Text = "Unusual, long-lasting (not related to tension-type headaches, chronic migraines, or other known causes or conditions you already have)", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q9_sl = new StackLayout { Children = { q9_title, q9_desc }, };
@@ -205,8 +205,8 @@ namespace CoroVi//.SelfCare
             Label q10_title = new Label
             {
                 Text = "Digestive issues like nausea/vomiting, diarrhea, stomach pain",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q10_desc = new Label { Text = "Not related to irritable bowel syndrome, menstrual cramps, or other known causes or conditions you already have", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q10_sl = new StackLayout { Children = { q10_title, q10_desc }, };
@@ -217,8 +217,8 @@ namespace CoroVi//.SelfCare
             Label q11_title = new Label
             {
                 Text = "Muscle aches",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q11_desc = new Label { Text = "Unusual, long-lasting (not related to a sudden injury, fibromyalgia, or other known causes or conditions you already have)", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q11_sl = new StackLayout { Children = { q11_title, q11_desc }, };
@@ -229,8 +229,8 @@ namespace CoroVi//.SelfCare
             Label q12_title = new Label
             {
                 Text = "Extreme tiredness",
-                Font = Font.SystemFontOfSize(NamedSize.Medium)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
             };
             Label q12_desc = new Label { Text = "Unusual, fatigue, lack of energy (not related to depression, insomnia, thyroid dysfunction, or other known causes or conditions you already have)", Margin = new Thickness(-1, -7, -1, -1), };
             StackLayout q12_sl = new StackLayout { Children = { q12_title, q12_desc }, };
@@ -294,15 +294,14 @@ namespace CoroVi//.SelfCare
             var scroll = new ScrollView
             {
                 Content = grid
-                //Children = { grid },
             };
 
 
             var lbl_title = new Label
             {
                 Text = "COVID-19 self-assessment",
-                Font = Font.SystemFontOfSize(NamedSize.Large)
-                           .WithAttributes(FontAttributes.Bold),
+                FontAttributes = FontAttributes.Bold,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
 
             };
