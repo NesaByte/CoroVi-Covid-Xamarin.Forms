@@ -38,7 +38,7 @@
                     <yummy:PancakeView Grid.Row="1" Grid.Column="1" BackgroundColor="{Binding BGColor2}" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">
                     <StackLayout>
                             <Label x:Name="x_sb2" Text="" Margin="20,10,10,10" FontSize="Small"/>
-                    </StackLayout>
+                    </StackLayout> 
                 </yummy:PancakeView>
 
                     <yummy:PancakeView Grid.Row="2" Grid.Column="1" BackgroundColor="{Binding BGColor3}" Margin="5,5,5,5" CornerRadius="30,15,5,15" HorizontalOptions="FillAndExpand" HeightRequest="150">

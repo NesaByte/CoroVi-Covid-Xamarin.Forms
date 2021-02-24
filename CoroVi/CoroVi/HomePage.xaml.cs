@@ -103,6 +103,8 @@ namespace CoroVi
                     TodayRecovered.Text = "";
 
                     await DisplayAlert("Error", "Please give me a correct country name", "OK");
+
+                    countryName.Text = "";
                     
                 } else {
                     var res_worldTotal = await client.GetStringAsync(url_toFind);
@@ -139,9 +141,11 @@ namespace CoroVi
                     int itdr = Convert.ToInt32(tdr);
                     TodayRecovered.Text = itdr.ToString("N0");
 
+                    countryName.Text = "";
                 }
             }
         }
+
 
             
     }
